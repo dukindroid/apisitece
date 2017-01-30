@@ -1,0 +1,43 @@
+{# clases/Sitece16/Vistas/doc/estruc/empty.api.twig #}
+{% extends 'base/base.api.twig' %}
+{% block tituloPagina %}docs SITECE16{% endblock %}
+{% block tituloContenido %}
+	
+{% endblock %}
+<section id="{{seccion_id}}">
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">
+			<p>
+				{% block introduccion %}
+				{% endblock %}
+			</p>
+			<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+				<div class="text-center d-flex w-100 justify-content-between">
+					{% block imagenPrincipal %}
+					{% endblock %}
+				</div>
+			</a>
+			<p>
+			</p>
+			<p>
+				<div class="list-group">
+					<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+						<div class="d-flex w-100 justify-content-between">
+							<h4 class="mb-1">{% block subtitulo %}
+							{% endblock %}</h4>
+							<p class="mb-1">
+								{% block contenido %}
+								{% endblock %}
+							</p>
+							<small style="font-family: 'Caveat', cursive;">
+								{% block subscript %}
+									
+								{% endblock %}
+							</small>
+						</div>
+					</a>
+				</div>
+			</p>
+		</li>
+	</ul>
+</section>

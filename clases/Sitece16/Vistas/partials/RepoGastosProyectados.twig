@@ -1,0 +1,28 @@
+<?php
+require '../vendor/autoload.php';
+require 'testHelp.php';
+require_once 'idiorm.php';
+
+test::htmlTop("Tests de clase: RepoGastosProyectados");
+
+$repo = new Sitece16\Repositorios\PlanDeGastos\RepoGastosProyectados();
+
+echo "<blockquote><i>Carga de menu de <b>RepoGastosProyectados</b> suc. 30:</i></blockquote>";
+$menu30 = $repo->menuDePlanes("30");
+echo "<pre>";
+foreach ($menu30 as $elemento) {
+	echo $elemento->get('desde') . " \t" . $elemento->get('hasta') . " \t" . $elemento->get('ano') . "\n";
+}
+echo "</pre><br>";
+
+echo "<blockquote><i>Carga de <b>RepoGastosProyectados</b>:</i></blockquote>";
+$proyecto30 = $repo->datosDeProyecto("30", "36","43","2016");
+
+echo "<pre>";
+foreach ($proyecto30 as $partida) {
+	echo $partida->get('gasto') . ": $" . $partida->get('semana_8') . "\n";
+	//echo $partida;
+}
+echo "</pre><br>";
+
+test::htmlBottom();

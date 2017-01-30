@@ -1,0 +1,24 @@
+<?php
+require '../vendor/autoload.php';
+require_once 'idiorm.php';
+require 'testHelp.php';
+
+test::htmlTop("Tests de clase: RepoCatalogo");
+
+echo "<br><blockquote><i>Carga de un solo objeto <b>Partida</b></i></blockquote>";
+
+$repoCatalogo = new Sitece16\Repositorios\PlanDeGastos\RepoCatalogo();
+$partida = $repoCatalogo->encontrarUno('CA-501');
+echo "<pre>";
+echo $partida;
+echo "</pre><br>";
+
+$catalogoActivo = $repoCatalogo->catalogoActivo();
+echo "<blockquote><i>Carga de todo el <b>Catálogo Activo</b>:</i></blockquote>";
+echo "<pre>";
+foreach ($catalogoActivo as $elementoCatalogo) {
+	printf("%s: %s <br>",$elementoCatalogo->get('codigo'), mb_decode_mimeheader($elementoCatalogo->get('valor')));
+}
+echo "</pre><br>";
+
+test::htmlBottom();

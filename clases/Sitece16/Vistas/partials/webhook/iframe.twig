@@ -1,0 +1,18 @@
+<section class="content-header">
+	<h1>
+		CRM
+		<small>Control</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="?mod=home"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li class="active">WebHook: {{ activePage }}</li>
+	</ol>
+</section>
+<section class="content" style="height: 500px;">
+{% block content %}
+{% endblock %}
+{% block iframe %}
+	<iframe name="webhook_frame" style="border:none;" height=100% width=100% src="{{ uri }}"></iframe>
+{% endblock %}
+
+</section>
