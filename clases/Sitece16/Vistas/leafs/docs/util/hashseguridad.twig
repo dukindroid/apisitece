@@ -1,0 +1,19 @@
+{# clases/Sitece16/Vistas/doc/estruc/empty.api.twig #}
+{% extends 'base/base.api.twig' %}
+{% set seccion_id = "hashseguridad" %}
+
+{% block tituloPagina %}docs SITECE16{% endblock %}
+{% block tituloContenido %}hash seguridad{% endblock %}
+{% block introduccion %}
+<p>
+	La Universidad de Carnegie Mellon provee un <a href="https://www.cmu.edu/iso/governance/guidelines/password-management.html">set</a> de restricciones y mejores prácticas en cuanto al manejo, uso y provisión de contraseñas. Entre las más importantes, destaca un punto en que se recomienda a los administradores de servicios y sistemas nunca almacenar ni transmitir contraseñas como texto plano. En la versión 5.5 de php se introdujo como parte de la librería standard las funciones password_hash, password_verify y otras complementarias, con las cuales se puede implementar fácilmente un primer nivel básico de seguridad para las contraseñas, encriptándolas mediante algún algoritmo hash. 
+</p>
+<p>
+	Lo siguiente es una rutina de utilería la cual toma cada campo de contraseña de la tabla 'seguridad' y almacena su valor hash en otra columna. Solo es necesario ejecutar esta rutina una vez para actualizar los valores de todas las contraseñas en esta tabla. En lo posterior sería necesario que cada que se cree un nuevo usuario nos cercioremos de que la contraseña estrablecida se almacene desde un principio como solamente su valor hash. 
+</p>
+{% endblock %}
+{% block imagenPrincipal %}{% endblock %}
+{% block subtitulo %}{% endblock %}
+{% block contenido %}{% endblock %}
+{% block subscript %}{% endblock %}
+	

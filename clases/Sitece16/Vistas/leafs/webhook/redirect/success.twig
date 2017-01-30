@@ -1,0 +1,23 @@
+{% extends 'base/base.simple.twig' %}
+{% spaceless %}
+	{% block head %}
+		<link rel="stylesheet" type="text/css" href="{{ base_url() }}/css/login.css">
+	{% endblock %}
+	{% block content %}
+	{% endblock %}
+{% block javascripts %}
+<script>
+/*
+$( document ).ready(function() {
+    console.log( "ready!" );
+	parent.location.href=parent.location.href;
+	//window.top.location.reload();
+});
+*/
+//parent.location.href=parent.location.href;
+//window.top.myObject.updateMe( 'Hello!' );
+parent.postMessage("base64 jwt", "*");
+</script>	
+{% endblock %}
+{% endspaceless %}
+

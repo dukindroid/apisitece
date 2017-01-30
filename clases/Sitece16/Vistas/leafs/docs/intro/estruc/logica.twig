@@ -1,0 +1,127 @@
+{# clases/Sitece16/Vistas/doc/estruc/logica.twig #}
+{% extends '/base/base.api.twig' %}
+{% block title %}docs SITECE16{% endblock %}
+{% block contentTitle %}
+	Estructura Lógica
+{% endblock %}
+{% block content %}
+<section id="estructuraLogica">
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">
+			<p>Cualquier aplicación web se divide en 4 capas importantes de la siguiente manera:</p>
+			<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+			<div class="text-center d-flex w-100 justify-content-between">
+				<img class="align-middle" src="/img/layers.gif" height="285" width="250" />
+			</div>
+			</a>
+			<p>
+			Se separan de esta manera también los distintos lenguajes que utiliza cada capa en archivos y carpetas individuales, quedando en un solo lugar las consultas SQL referentes a la lógica de base de datos, el código php referente a la lógica de la aplicación, las plantillas twig/html referentes a la lógica de despliegue y los archivos css/js/imagenes correspondientes de manera exclusiva al navegador. 
+			</p>
+			<p>
+				<div class="list-group">
+					<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+						<div class="d-flex w-100 justify-content-between">
+							<h4 class="mb-1">Navegador</h4>
+							<p class="mb-1">
+								La instancia más superficial son las páginas html que son finalmente construidas y enviadas al navegador del cliente después de ser formadas por todas las capas inferiores. Esta capa se conforma por código html, css o js éstático descargado en el navegador del cliente.
+							</p>
+							<small style="font-family: 'Caveat', cursive;">archivos en el cliente, css, js, html final</small>
+						</div>
+					</a>
+					<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+						<div class="d-flex w-100 justify-content-between">
+							<h4 class="mb-1">Lógica de despliegue</h4>
+							<p class="mb-1">Librerías y plantillas que dan estructura y forman el html final. En este caso usamos la librería twig, componentes de vue.js y bootstrap 4 para dar formato. Cada plantilla twig se genera de manera distinta dependiendo de los permisos con que cuente el usuario, variando desde no presentar nada si es un usuario no autorizado a presentar gradualmente la información a la que tenga permiso según su nivel de autorización. Esta capa se conforma por plantillas twig y paquetes json guardados en el servidor o generados por el api para después ser rellenados o desplegados en el cliente.</p>
+							<small style="font-family: 'Caveat', cursive;">Directorio clases/Sitece16/Vistas, plantillas twig, bootstrap 4, vue.js</small>
+						</div>
+					</a>
+					<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+						<div class="d-flex w-100 justify-content-between">
+							<h4 class="mb-1">Lógica de Aplicación</h4>
+							<p class="mb-1">Desde este enfoque es la parte medular de la aplicación, desde que se carga el microframework slim, después el controlador de clases Sitece16 y se generan los objetos que sean requeridos. En esta capa se encuentra todo el código php excepto el referente a interacción con la base de datos.</p>
+							<small style="font-family: 'Caveat', cursive;">Directorio src, Entidades, Módulos</small>
+						</div>
+					</a>
+					<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+						<div class="d-flex w-100 justify-content-between">
+							<h4 class="mb-1">Lógica de base de datos</h4>
+							<p class="mb-1">Todos los archivos que sirven para interactuar con la base de datos y proveer a los objetos de la aplicación con la información necesaria para que sean cargados,</p>
+							<small style="font-family: 'Caveat', cursive;">Directorio Repositorios</small>
+						</div>
+					</a>
+				</div>
+			</p>
+		</li>
+	</ul>
+</section>	
+<section id="librerias">
+	<h2 class="comment">
+		Librerías utilizadas
+	</h2>
+	<p>
+		Descripción:
+		<div class="container">
+			<div class="row">
+			</div>
+
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Versión</th>
+					<th>Descripción</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>slim/slim</td>
+					<td>^3.6</td>
+					<td>Microframework sencillo para escribir API's y aplicaciones web.</td>
+				</tr>
+				<tr>
+					<td>j4mie/idiorm</td>
+					<td>^1.5</td>
+					<td>Mapeador de objetos relacionales y constructor de consultas fluidas.</td>
+				</tr>
+				<tr>
+					<td>slim/twig-view</td>
+					<td>^2.1</td>
+					<td>Plugin para el microframework Slim que facilita el uso de la libreria Twig, la cual es un motor de plantillas para PHP</td>
+				</tr>
+				<tr>
+					<td>monolog/monolog</td>
+					<td>^1.22</td>
+					<td>Librería especializada en dar formato, organización, mantenimiento a archivos de bitácora.</td>
+				</tr>
+				<tr>
+					<td>tuupola/slim-basic-auth</td>
+					<td>^2.2</td>
+					<td>Librería midleware de autentificación de llamadas http de usuarios mediante comprobación de registros de usuario/contraseña persistidos en una base de datos.</td>
+				</tr>
+				<tr>
+					<td>tuupola/slim-jwt-auth</td>
+					<td>^2.3</td>
+					<td>Librería middleware de autentificación de llamadas http de usuarios mediante provisión de un token único en formato JSON</td>
+				</tr>
+				<tr>
+					<td>zeuxisoo/slim-whoops</td>
+					<td>^0.5.1</td>
+					<td>Facilita la detección y corrección de errores de programación en tiempo de ejecución mediate una interfaz html.</td>
+				</tr>
+				<tr>
+					<td>leafo/scssphp</td>
+					<td>^0.6.6</td>
+					<td>Preprocesador y servidor de hojas de estilo css</td>
+				</tr>
+			</tbody>
+		</table>
+	</p>
+	<p>
+		Descripción de dependencias de clases Sitece16
+	</p>
+	<p>
+		Ash... luego lo escribo.. :D
+	</p>
+</section> 
+{% endblock %}

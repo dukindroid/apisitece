@@ -1,0 +1,28 @@
+{% spaceless %}
+
+	{% extends "base.twig" %}
+
+	{% set titulo = 'Test de dataGrid'%}
+
+	{% block contentTitle %}{{titulo}}{% endblock %}
+
+	{% block head %}
+		{% include 'datagrid.css.twig' %}
+		<link rel="stylesheet" href="../../css/grid2.css">
+	{% endblock %}
+
+	{% block content %}
+		Vamos haciendo unas pruebas de poner unas tablitas cotorras a ver que tal se ven.
+		
+			{% include 'rejilla.twig' %}
+		
+	{% endblock %}
+
+	{% block footer %}
+		{% include 'base.footer.twig' %}
+		{% include 'base.js.twig' %}
+		{% include 'vue.js.twig' %}
+		<script src="../../js/grid.js"></script>
+	{% endblock %}
+
+{% endspaceless %}

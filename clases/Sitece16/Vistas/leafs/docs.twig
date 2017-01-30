@@ -1,0 +1,68 @@
+{# clases/Sitece16/Vistas/index.twig #}
+{% extends '/base/base.api.twig' %}
+{% block title %}Indice principal{% endblock %}
+{% block contentTitle %}
+	MicroFramework Sitece16
+{% endblock %}
+{% block content %}
+	<p>
+		Este es el índice de la quinta versión del frontend/API/herramienta-de-migración/entorno-de-desarrollo-web/etc llamado Microframework Sitece16. Hacemos un balance de todo lo que hasta el momento hay... y lo que no hay.
+	</p>
+	<br />
+	<a href="/login?XDEBUG_SESSION_START=sublime.xdebug">Login</a>
+	<a href="/logout?XDEBUG_SESSION_START=sublime.xdebug">Logout</a>
+	<br />
+	<br />
+	<p style="font-family: 'Caveat', cursive;" > 
+		Actualizado al 8 de Enero de 2017
+	</p>
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+		<div class="card card-block"> 
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h2 class="panel-title">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							Qué tenemos:
+						</a>
+					</h2>	
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<ul>
+							<li>Servidor de desarrollo configurado en dos entornos distintos de manera segura (apache2: arrendadora/casa, http/https) </li>
+							<li>Ambiente de desarrollo amigable y buena onda (sublime, xdebug, whoops)</li>
+							<li>Estructura básica de clases (Sitece16 - la M del MVC) y algún avance de la clase PlanAnual</li>
+							<li>Estructura de Vistas (la V del MVC) bien definida y documentada.</li>
+							<li>Framework prácticamente funcional (Slim, Idiorm, demás librerías externas - la C del MVC) con servicios básicos (drenaje, luz, agua potable... no no, esos no eran. Ah si! log de eventos, token único de usuario, login verificado mediante la libreria Zend-Authentication la cual es respetablemente popular como para tenerle confianza)</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card card-block"> 
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h2 class="panel-title">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+							Qué falta:
+						</a>
+					</h2>	
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						<ul>
+							<li>Que la documentación cubra el 100% del proyecto hasta el momento</li>
+							<li>Que la clase PlanAnual quede escrita y probada al 100%</li>
+							<li>Trazar y programar la API</li>
+							<li>Que funcione el cache, el login de usuarios y el registro de token</li>
+							<li>La versión amp de las Vistas</li>
+							<li>Que el servidor de desarrollo sea replicable (Vagrant :( )</li>
+							<li>Pruebas rigurosas, no solo de funcionalidad (phpunit)</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

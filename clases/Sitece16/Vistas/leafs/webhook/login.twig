@@ -1,0 +1,18 @@
+{% extends 'base/base.simple.twig' %}
+{% spaceless %}
+	{% set title = 'Por favor, re-identifíquese'%}
+	{% block head %}
+		<link rel="stylesheet" type="text/css" href="{{ base_url() }}/css/login.css">
+	{% endblock %}
+	{% block content %}
+		<div id="bg"></div>
+		<form action="{{ base_url() }}/webhook/login" method="POST">
+			<label for="username">Usuario: </label>
+			<input type="text" name="username" id="username" placeholder="# de usuario" value="{{ USR }}">
+			<label for="login">Contraseña</label>
+			<input type="password" name="password" id="password" placeholder="contraseña" class="pass">
+			<button type="submit">continuar</button>
+		</form>
+	{% endblock %}
+{% endspaceless %}
+

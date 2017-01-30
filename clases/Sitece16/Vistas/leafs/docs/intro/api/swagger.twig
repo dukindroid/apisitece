@@ -1,0 +1,89 @@
+{# clases/Sitece16/Vistas/doc/estruc/logica.twig #}
+{% extends '/base/base.api.twig' %}
+{% block title %}docs SITECE16{% endblock %}
+{% block contentTitle %}
+	Swagger
+{% endblock %}
+{% block stylesheets %}
+	<style type="text/css">
+	  
+		.node {
+	    cursor: pointer;
+	  }
+
+	  .overlay{
+	      background-color:#EEE;
+	  }
+	   
+	  .node circle {
+	    fill: #fff;
+	    stroke: steelblue;
+	    stroke-width: 1.5px;
+	  }
+	   
+	  .node text {
+	    font-size:10px; 
+	    font-family:sans-serif;
+	  }
+	   
+	  .link {
+	    fill: none;
+	    stroke: #ccc;
+	    stroke-width: 1.5px;
+	  }
+
+	  .templink {
+	    fill: none;
+	    stroke: red;
+	    stroke-width: 3px;
+	  }
+
+	  .ghostCircle.show{
+	      display:block;
+	  }
+
+	  .ghostCircle, .activeDrag .ghostCircle{
+	       display: none;
+	  }
+	</style>
+{% endblock %}
+{% block content %}
+	<section id="estructuraLogica">
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item">
+				<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+					<div class="text-center d-flex w-100 justify-content-between">
+						
+					</div>
+				</a>
+				<p>
+					Framework de código abierto especializado en el diseño, construcción, documentación y código de consumo de API's REST.
+				</p>
+				<p>
+					<div class="list-group">
+						<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+							<div class="d-flex w-100 justify-content-between">
+								<h4 class="mb-1">
+									¡¿Un framework en el framework?!
+								</h4>
+								<p class="mb-1">
+									Puede sonar tonto, pero en el fondo no es nada estúpido. Sitece16 en sí no es más que una librería de clases y objetos. Esta librería esta principalmente soportada y controlada por Slim, que no es mas que un servicio de envío recepción de requests http. 
+								</p>
+								<p>
+									Swagger tiene otra funcionalidad completamente, la cual es de en base a estos dos servicios anteriores, generar y documentar un servicio API completo. Vaya, hasta te genera el código php para llamar la api si de plano le da a uno mucha flojera. 
+								</p>
+								<small style="font-family: 'Caveat', cursive;">
+									Postdata: ¡Viva la familia!
+								</small>
+							</div>
+						</a>
+					</div>
+				</p>
+			</li>
+		</ul>
+	</section>	
+{% endblock %}
+{% block javascript %}
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="{{base_url()}}/js/dndTree.js"></script>
+{% endblock %}

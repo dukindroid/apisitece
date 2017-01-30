@@ -1,0 +1,8 @@
+{% spaceless %}
+	{% extends "base.twig" %}
+	{% set titulo = 'Por favor, identifíquese'%}
+	{% block head %}{% include '/ui/login/login.css.twig' %}{% endblock %}
+	{% block content %}
+		{% include '/ui/login/login.form.twig' %}
+	{% endblock %}
+{% endspaceless %}

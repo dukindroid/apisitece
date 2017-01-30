@@ -1,0 +1,32 @@
+{% extends '/base/base.api.twig' %}
+{% block title %}docs SITECE16{% endblock %}
+{% block contentTitle %}
+	PlanAnual: Pruebas de clase
+{% endblock %}
+{% block content %}
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">
+			Esto es lo que va hasta el momento del plan anual:
+        	<ul>
+	        	<li>
+	        		CatalogoDeGastos: Objeto que carga el catalogo de partidas de carrera y curso
+	        	</li>
+	        	<li>
+	        		GastoSemanal: Objeto que carga el total de todos los gastos de una partida, sucursal, semana y año en específico.
+	        	</li>
+	        	<li>
+	        		GastosProyectados: Objeto que carga el límite de gasto para una partida, sucursal, semana y año en específico. 
+	        	</li>
+	        	<li>
+	        		Partida: Objeto que carga los datos referentes a una partida: clave, descripción..
+	        	</li>
+	        	<li>
+	        		RepoCatalogo: Objeto que conecta el CatalogoDeGastos con la base de datos
+	        	</li>
+	        	<li>
+	        		RepoGastosProyectados: Objeto que conecta los GastosProyectados con la base de datos
+	        	</li>
+        	</ul>
+		</li>
+	</ul>
+{% endblock %}
